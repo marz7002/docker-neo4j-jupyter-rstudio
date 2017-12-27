@@ -1,0 +1,33 @@
+version: "2"
+
+services:  
+  neo4j:  
+    image: neo4j                                                                       
+    ports:                                                                              
+      - "7687:7687"
+      - "7474:7474"
+    volumes:
+      - data:/var/lib/neo4j/import
+
+  rStudio:
+    image: rocker/rstudio
+    ports: 
+      - "8787:8787"
+    volumes:
+       - data:/home/rstudio/kitematic
+
+  jupyterNotebook:
+    image: jupyter/minimal-notebook
+    ports: 
+      - "8888:8888"
+    volumes:
+       - data:/home/jovyan/work
+
+volumes:
+  data:
+    driver: local
+
+
+
+
+
