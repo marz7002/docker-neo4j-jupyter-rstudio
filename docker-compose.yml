@@ -1,6 +1,7 @@
 version: "2"
 
-services:  
+services: 
+  
   neo4j:  
     image: neo4j                                                                       
     ports:                                                                              
@@ -26,8 +27,3 @@ services:
 volumes:
   data:
     driver: local
-
-
-
-
-
